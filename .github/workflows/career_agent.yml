@@ -1,24 +1,49 @@
-name: Career Agent
+import os
+import requests
 
-on:
-  workflow_dispatch:
+BOT_TOKEN = os.environ["BOT_TOKEN"]
+CHAT_ID = os.environ["CHAT_ID"]
 
-jobs:
-  run-agent:
-    runs-on: ubuntu-latest
+jobs = [
+    {
+        "title": "BEL Recruitment",
+        "score": "10/10",
+        "link": "https://bel-india.in/"
+    },
+    {
+        "title": "ECIL Careers",
+        "score": "10/10",
+        "link": "https://www.ecil.co.in/jobs.html"
+    },
+    {
+        "title": "ISRO Careers",
+        "score": "10/10",
+        "link": "https://www.isro.gov.in/Careers.html"
+    },
+    {
+        "title": "DRDO Careers",
+        "score": "10/10",
+        "link": "https://www.drdo.gov.in/careers"
+    }
+]
 
-    steps:
-      - uses: actions/checkout@v4
+message = "🚀 Career Agent Daily Report\n\n"
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+for job in jobs:
+    message += (
+        f"🔥 {job['title']}\n"
+        f"Match Score: {job['score']}\n"
+        f"Apply: {job['link']}\n\n"
+    )
 
-      - name: Install requirements
-        run: pip install -r requirements.txt
+url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
-      - name: Run Career Agent
-        run: python career_agent.py
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          CHAT_ID: ${{ secrets.CHAT_ID }}
+requests.post(
+    url,
+    data={
+        "chat_id": CHAT_ID,
+        "text": message
+    }
+)
+
+print("Report sent")
