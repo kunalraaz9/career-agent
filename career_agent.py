@@ -1,33 +1,14 @@
 import os
 import requests
+from sources.psu import get_psu_jobs
 
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
 
-jobs = [
-    {
-        "title": "BEL Recruitment",
-        "score": "10/10",
-        "link": "https://bel-india.in/"
-    },
-    {
-        "title": "ECIL Careers",
-        "score": "10/10",
-        "link": "https://www.ecil.co.in/jobs.html"
-    },
-    {
-        "title": "ISRO Careers",
-        "score": "10/10",
-        "link": "https://www.isro.gov.in/Careers.html"
-    },
-    {
-        "title": "DRDO Careers",
-        "score": "10/10",
-        "link": "https://www.drdo.gov.in/careers"
-    }
-]
+jobs = get_psu_jobs()
 
-message = "🚀 Career Agent Daily Report\n\n"
+message = "🚀 DAILY CAREER REPORT\n\n"
+message += "🏛 PSU / GOVERNMENT JOBS\n\n"
 
 for job in jobs:
     message += (
@@ -46,4 +27,4 @@ requests.post(
     }
 )
 
-print("Report sent")
+print("Report Sent")
