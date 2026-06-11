@@ -4,19 +4,37 @@ import requests
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
 
-message = """
-🚀 Career Agent Started
+jobs = [
+    {
+        "title": "BEL Recruitment",
+        "score": "10/10",
+        "link": "https://bel-india.in/"
+    },
+    {
+        "title": "ECIL Careers",
+        "score": "10/10",
+        "link": "https://www.ecil.co.in/jobs.html"
+    },
+    {
+        "title": "ISRO Careers",
+        "score": "10/10",
+        "link": "https://www.isro.gov.in/Careers.html"
+    },
+    {
+        "title": "DRDO Careers",
+        "score": "10/10",
+        "link": "https://www.drdo.gov.in/careers"
+    }
+]
 
-Version 1 Active
+message = "🚀 Career Agent Daily Report\n\n"
 
-Sections:
-✅ Core Engineering Jobs
-✅ PSU Jobs
-✅ Government Exams
-✅ Remote Jobs
-
-More sources coming soon.
-"""
+for job in jobs:
+    message += (
+        f"🔥 {job['title']}\n"
+        f"Match Score: {job['score']}\n"
+        f"Apply: {job['link']}\n\n"
+    )
 
 url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
@@ -28,4 +46,4 @@ requests.post(
     }
 )
 
-print("Message sent successfully")
+print("Report sent")
