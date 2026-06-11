@@ -10,7 +10,7 @@ response = requests.post(
     url,
     data={
         "chat_id": CHAT_ID,
-        "text": "TEST FROM GITHUB ACTIONS"
+        "text": message
     }
 )
 
