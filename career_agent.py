@@ -32,6 +32,20 @@ for name, link, score in get_govt_jobs():
 message += "\n\n🌍 REMOTE JOBS\n"
 for name, link, score in get_remote_jobs():
     message += f"\n{name}\nScore: {score}\n{link}\n"
+    message += "\n🔥 LIVE ECIL JOBS\n"
+
+for name, link, score in get_ecil_jobs():
+    message += f"\n{name}\nScore: {score}\n{link}\n"
+
+message += "\n🔥 LIVE NTPC JOBS\n"
+
+for name, link, score in get_ntpc_jobs():
+    message += f"\n{name}\nScore: {score}\n{link}\n"
+
+message += "\n🔥 LIVE POWERGRID JOBS\n"
+
+for name, link, score in get_powergrid_jobs():
+    message += f"\n{name}\nScore: {score}\n{link}\n"
 
 url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
