@@ -1,5 +1,4 @@
 import os
-raise Exception("KUNAL TEST")
 import requests
 
 BOT_TOKEN = os.environ["BOT_TOKEN"]
