@@ -1,3 +1,4 @@
+message = "🚀 DAILY CAREER REPORT V3 TEST\n\n"
 import os
 import requests
 
