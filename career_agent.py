@@ -5,6 +5,7 @@ from sources.psu import get_psu_jobs
 from sources.govt import get_govt_jobs
 from sources.remote import get_remote_jobs
 from sources.core import get_core_jobs
+from sources.bel import get_bel_jobs
 
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
@@ -15,7 +16,10 @@ message += "🏛 PSU JOBS\n"
 for name, link, score in get_psu_jobs():
     message += f"\n{name}\nScore: {score}\n{link}\n"
 
+message += "🔥 LIVE BEL JOBS\n"
 
+for name, link, score in get_bel_jobs():
+    message += f"\n{name}\nScore: {score}\n{link}\n"
 message += "\n⚡ CORE ELECTRICAL JOBS\n"
 
 for name, link, score in get_core_jobs():
