@@ -1,28 +1,9 @@
 def get_psu_jobs():
     return [
-        {
-            "title": "BEL Careers",
-            "score": "10/10",
-            "link": "https://bel-india.in/"
-        },
-        {
-            "title": "ECIL Careers",
-            "score": "10/10",
-            "link": "https://www.ecil.co.in/jobs.html"
-        },
-        {
-            "title": "ISRO Careers",
-            "score": "10/10",
-            "link": "https://www.isro.gov.in/Careers.html"
-        },
-        {
-            "title": "DRDO Careers",
-            "score": "10/10",
-            "link": "https://www.drdo.gov.in/careers"
-        },
-        {
-            "title": "NTPC Careers",
-            "score": "10/10",
-            "link": "https://careers.ntpc.co.in/"
-        }
+        ("BEL", "https://bel-india.in/", "10/10"),
+        ("ECIL", "https://www.ecil.co.in/jobs.html", "10/10"),
+        ("ISRO", "https://www.isro.gov.in/Careers.html", "10/10"),
+        ("DRDO", "https://www.drdo.gov.in/careers", "10/10"),
+        ("NTPC", "https://careers.ntpc.co.in/", "10/10"),
+        ("POWERGRID", "https://www.powergrid.in/career-opportunities", "10/10"),
     ]
