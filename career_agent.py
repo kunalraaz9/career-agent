@@ -9,6 +9,7 @@ from sources.ecil import get_ecil_jobs
 from sources.ntpc import get_ntpc_jobs
 from sources.powergrid import get_powergrid_jobs
 from sources.live_jobs import get_live_test
+from sources.semiconductor import get_semiconductor_jobs
 
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
@@ -51,6 +52,13 @@ message += "\n🔥 LIVE SCRAPER TEST\n"
 
 for name, link, score in get_live_test():
     message += "\n" + name + "\nScore: " + str(score) + "\n" + link + "\n"
+
+message += "\n🔥 SEMICONDUCTOR & VLSI JOBS\n"
+
+for name, link, score in get_semiconductor_jobs():
+    message += "\n" + name + "\nScore: " + str(score) + "\n" + link + "\n"
+
+
 url = "https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage"
 
 print(message)
