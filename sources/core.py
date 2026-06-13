@@ -2,7 +2,7 @@ def get_core_jobs():
 return [
 # Electrical / Power
 
-```
+```("KUNAL TEST COMPANY", "https://google.com", "10/10"),
     ("Siemens Careers", "https://jobs.siemens.com", "10/10"),
     ("ABB Careers", "https://global.abb/group/en/careers", "10/10"),
     ("Schneider Electric", "https://careers.se.com", "10/10"),
