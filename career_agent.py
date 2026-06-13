@@ -11,7 +11,7 @@ from sources.powergrid import get_powergrid_jobs
 
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
-message = "🚨 KUNAL NEW VERSION TEST 🚨\n\n"
+
 message += "DAILY CAREER REPORT\n\n"
 
 message += "PSU JOBS\n"
