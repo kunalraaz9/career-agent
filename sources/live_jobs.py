@@ -1,13 +1,13 @@
 import requests
 
 def get_live_test():
-try:
-response = requests.get(
-"https://www.ecil.co.in/jobs.html",
-timeout=15
-)
+    try:
+        response = requests.get(
+            "https://www.ecil.co.in/jobs.html",
+            timeout=15
+        )
 
-```
+
     return [
         (
             "ECIL Website Reachable",
@@ -24,4 +24,4 @@ except Exception as e:
             "0/10"
         )
     ]
-```
+
