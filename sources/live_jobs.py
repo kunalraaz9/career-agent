@@ -3,7 +3,10 @@ from bs4 import BeautifulSoup
 
 def get_live_test():
 try:
-response = requests.get("https://www.ecil.co.in/jobs.html", timeout=15)
+response = requests.get(
+"https://www.ecil.co.in/jobs.html",
+timeout=15
+)
 
 ```
     return [
