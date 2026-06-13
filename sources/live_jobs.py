@@ -1,25 +1,28 @@
 import requests
+from sources.storage import load_seen_jobs, save_seen_job
 
 def get_live_test():
-    try:
-        response = requests.get(
+seen = load_seen_jobs()
+
+```
+job_name = "ECIL Website Reachable"
+
+if job_name not in seen:
+    save_seen_job(job_name)
+
+    return [
+        (
+            "🆕 NEW ENTRY DETECTED",
             "https://www.ecil.co.in/jobs.html",
-            timeout=15
+            "10/10"
         )
+    ]
 
-        return [
-            (
-                "ECIL Website Reachable",
-                "https://www.ecil.co.in/jobs.html",
-                "10/10"
-            )
-        ]
-
-    except Exception as e:
-        return [
-            (
-                f"ERROR: {e}",
-                "",
-                "0/10"
-            )
-        ]
+return [
+    (
+        "No New Entries",
+        "",
+        "0/10"
+    )
+]
+```
