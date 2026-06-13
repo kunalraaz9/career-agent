@@ -1,5 +1,6 @@
-name: Career Agent
 
+name: Run Career Agent
+  run: python career_agent.py
 on:
   schedule:
     - cron: '0 2 * * *'
