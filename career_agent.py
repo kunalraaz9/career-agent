@@ -8,6 +8,7 @@ from sources.bel import get_bel_jobs
 from sources.ecil import get_ecil_jobs
 from sources.ntpc import get_ntpc_jobs
 from sources.powergrid import get_powergrid_jobs
+from sources.live_jobs import get_live_test
 
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
@@ -45,7 +46,11 @@ for name, link, score in get_govt_jobs():
 message += "\nREMOTE JOBS\n"
 for name, link, score in get_remote_jobs():
     message += "\n" + name + "\nScore: " + str(score) + "\n" + link + "\n"
+    
+message += "\n🔥 LIVE SCRAPER TEST\n"
 
+for name, link, score in get_live_test():
+    message += "\n" + name + "\nScore: " + str(score) + "\n" + link + "\n"
 url = "https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage"
 
 print(message)
