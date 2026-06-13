@@ -1,8 +1,7 @@
-import requests
 from sources.storage import load_seen_jobs, save_seen_job
 
 def get_live_test():
- seen = load_seen_jobs()
+  seen = load_seen_jobs()
 
 ```
 job_name = "ECIL Website Reachable"
