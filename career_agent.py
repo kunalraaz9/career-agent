@@ -12,7 +12,7 @@ from sources.powergrid import get_powergrid_jobs
 BOT_TOKEN = os.environ["BOT_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
 message = "🚨 KUNAL NEW VERSION TEST 🚨\n\n"
-message = "DAILY CAREER REPORT\n\n"
+message += "DAILY CAREER REPORT\n\n"
 
 message += "PSU JOBS\n"
 for name, link, score in get_psu_jobs():
@@ -48,6 +48,8 @@ for name, link, score in get_remote_jobs():
     message += "\n" + name + "\nScore: " + str(score) + "\n" + link + "\n"
 
 url = "https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage"
+
+print(message)
 
 response = requests.post(
     url,
