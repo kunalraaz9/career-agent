@@ -3,8 +3,7 @@ from sources.storage import load_seen_jobs, save_seen_job
 def get_live_test():
   seen = load_seen_jobs()
 
-
-job_name = "ECIL Website Reachable"
+    job_name = "ECIL Website Reachable"
 
 if job_name not in seen:
     save_seen_job(job_name)
