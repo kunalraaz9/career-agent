@@ -18,9 +18,10 @@ message += "PSU JOBS\n"
 for name, link, score in get_psu_jobs():
     message += "\n" + name + "\nScore: " + str(score) + "\n" + link + "\n"
 
-#message += "\nLIVE BEL JOBS\n"
-#for name, link, score in get_bel_jobs():
-    #message += "\n" + name + "\nScore: " + str(score) + "\n" + link + "\n"
+message += "\nLIVE BEL JOBS\n"
+for name, link, score in get_bel_jobs():
+    message += "\n" + name + "\nScore: " + str(score) + "\n" + link + "\n"
+
 
 message += "\nLIVE ECIL JOBS\n"
 for name, link, score in get_ecil_jobs():
